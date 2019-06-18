@@ -1,8 +1,8 @@
-#PexelPy
+# PexelPy
 * Pics Downloader with pexel API in python
 
 ----
-##What is PexelPy?
+## What is PexelPy?
 > With help of **PexelPy** you can download a large number of images within one command 
 
 ----
@@ -18,7 +18,7 @@ To get your API please visit [here](https://www.pexels.com/api/new/)
 
 * setup your API-KEY:
 
-###auth.py
+### auth.py
     apikey='YOUR-API-KEY' 
     
 
