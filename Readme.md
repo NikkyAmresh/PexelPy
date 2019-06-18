@@ -7,7 +7,7 @@
 
 ----
 
-##requirements 
+## requirements 
    
     $ pip install requests 
 
@@ -31,14 +31,14 @@ To get your API please visit [here](https://www.pexels.com/api/new/)
     python app.py [category] [quantity] [quality] 
 
    * 6 qualities are available :
-    * 'XLQ' for extra low quality
-    * 'LQ' for low quality
-    * 'M' for medium quality
-    * 'HD' for HD quality
-    * 'FHD' for FHD quality
-    * 'N' for original quality
-    * 'P' for portrait
-    * 'L' for landscape
+      * 'XLQ' for extra low quality
+      * 'LQ' for low quality
+      * 'M' for medium quality
+      * 'HD' for HD quality
+      * 'FHD' for FHD quality
+      * 'N' for original quality
+      * 'P' for portrait
+      * 'L' for landscape
 
 
 * **To continue last interrupt**
