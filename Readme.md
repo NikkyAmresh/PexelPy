@@ -3,7 +3,7 @@
 
 ----
 ## What is PexelPy?
-> With help of **PexelPy** you can download a large number of images within one command 
+> With help of **PexelPy** you can download a large number of images within a single command 
 
 ----
 
@@ -41,7 +41,7 @@ To get your API please visit [here](https://www.pexels.com/api/new/)
       * 'L' for landscape
 
 
-* **To continue last interrupt**
+* **To continue last interrupted download**
  
 
         $ python app.py last 
