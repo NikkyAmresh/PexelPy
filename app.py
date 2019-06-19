@@ -98,8 +98,13 @@ else:
                 exit("invalid quality")
         rn=random.randint(1000,9999)
         tmp='temp'+str(rn)
+        dirr=keyword+'_pics'
+        if(os.path.isdir(tmp)):
+            tmp=tmp+str(rn)
+        if(os.path.isdir(dirr)):
+            dirr=dirr+str(rn)
         os.mkdir(tmp)
-        os.mkdir(keyword+'_pics')    
+        os.mkdir(dirr)    
 head={
     "Authorization":apikey
     }
