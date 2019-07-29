@@ -49,4 +49,4 @@ To get your API please visit [here](https://www.pexels.com/api/new/)
 
 ----
 ## Thanks
-* Thanks for checking it out. :blush:
+* Thanks for checking it out. :) 
