@@ -8,37 +8,20 @@ parser.add_argument("f_nm", help="Enter number of images", nargs='?', const=50, 
 parser.add_argument("quality", help="choose image quality", nargs='?', const='null', type=str, default='null')
 args=parser.parse_args()
 keyword=args.category
+def download_file(url,path):
+    local_filename = url.split('/')[-1].split('?')[0]
+    with requests.get(url, stream=True) as r:
+        r.raise_for_status()
+        with open(path+"/"+local_filename, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192): 
+                if chunk: 
+                    f.write(chunk)
+    return local_filename
 def dn(i,lis,keyword,f_num,tmp):
     while i<f_num:
         try:
             url=lis[i]
-            hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-               'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-               'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-               'Accept-Encoding': 'none',
-               'Accept-Language': 'en-US,en;q=0.8',
-               'Connection': 'keep-alive'}
-            req = Request(url, headers=hdr)
-            file_name = url.split('/')[-1]
-            file_name=file_name.split('?')[0]
-            u = urlopen(req)
-            f = open(keyword+"_pics/"+keyword+str(i)+".jpg", 'wb')
-            meta = u.info()
-            file_size = int(meta.get_all("Content-Length")[0])
-            pri="Downloading: %s.jpg Bytes: %s" % (i, file_size)
-            print(pri)
-            file_size_dl = 0
-            block_sz = 8192
-            while True:
-                buffer = u.read(block_sz)
-                if not buffer:
-                    break
-                file_size_dl += len(buffer)
-                f.write(buffer)
-                status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-                status = status + chr(8)*(len(status)+1)
-                print(status)
-            f.close()
+            download_file(url,keyword+"_pics")
             print(str(i)+" downloaded")
             ff=open('g.py','w')
             ff.write("a='"+keyword+"'\ng="+str(i))
