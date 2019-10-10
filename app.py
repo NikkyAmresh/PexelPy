@@ -165,7 +165,7 @@ f1.close()
 from g import g
 import shutil
 shutil.rmtree(tmp+'/')
-print(str(f_num)+" images ready to download")      
+print(str(f_num)+" images ready to download ")      
 dn(0,lis,keyword,f_num,tmp)
 
         
